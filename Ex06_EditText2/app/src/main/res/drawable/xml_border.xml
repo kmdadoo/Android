@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="3dp" android:color="#FF000000" />
+            <solid android:color="#FFFFFFFF" />
+        </shape>
+    </item>
+</layer-list>
+<!--
+XML 코드는 안드로이드에서 사용되는 layer-list 리소스 파일로, 사각형 모양의 드로어블(Drawable) 객체를 정의합니다.
+이 드로어블은 주로 뷰의 배경으로 사용되어 테두리가 있는 사각형을 만듭니다.
+<layer-list>: 여러 드로어블을 겹겹이 쌓아서 하나의 드로어블처럼 보이게 만드는 컨테이너입니다.
+여기서는 단 하나의 <item>만 포함하고 있어서, 복잡한 레이어링보다는 한 가지 모양을 정의하는 용도로 사용됩니다.
+<item>: layer-list 안의 각 레이어를 나타냅니다.
+<shape>: 드로어블의 기본 도형을 정의합니다. android:shape="rectangle"은 이 도형이 직사각형임을 지정합니다.
+<shape> 내부 속성:
+<stroke>: 도형의 **테두리(경계선)**를 정의합니다.
+android:width="3dp": 테두리의 두께를 3dp로 설정합니다.
+android:color="#FF000000": 테두리 색상을 **검정색(#FF000000)**으로 설정합니다.
+<solid>: 도형의 내부 색상을 정의합니다.
+android:color="#FFFFFFFF": 도형의 내부를 **흰색(#FFFFFFFF)**으로 채웁니다.
+-->

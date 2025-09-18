@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/stop_clicked" />
+    <item android:state_focused="true" android:drawable="@drawable/stop_clicked" />
+    <item android:drawable="@drawable/stop_normal" />
+</selector>
+<!--
+이 XML 코드는 안드로이드에서 버튼의 상태에 따라 이미지를 자동으로 변경하는 selector 드로어블 파일입니다.
+이 드로어블은 주로 버튼의 android:background 속성에 사용되어, 사용자가 버튼을 누르거나(클릭) 포커스를
+맞출 때 시각적 피드백을 제공합니다.
+<selector>: 여러 드로어블을 정의하고, 뷰의 현재 상태에 따라 표시할 드로어블을 선택하는 역할을 합니다.
+안드로이드 시스템은 selector 내의 <item>들을 위에서부터 순서대로 확인하며, 현재 상태와 일치하는 첫 번째 item의 drawable을 사용합니다.
+
+첫 번째 <item>:
+android:state_pressed="true": 버튼이 눌린(pressed) 상태일 때 이 항목을 선택합니다.
+android:drawable="@drawable/stop_clicked": 눌린 상태일 때는 res/drawable 폴더에
+있는 stop_clicked 이미지를 사용하라는 의미입니다.
+
+두 번째 <item>:
+android:state_focused="true": 버튼에 포커스가 맞춰진(focused) 상태일 때 이 항목을 선택합니다.
+(예: 키보드나 트랙볼로 버튼을 선택했을 때).
+android:drawable="@drawable/stop_clicked": 포커스가 맞춰진 상태일 때도 역시 stop_clicked 이미지를 사용합니다.
+
+세 번째 <item>:
+android:drawable="@drawable/stop_normal": 위에 정의된 어떤 상태에도 해당되지 않을 때 (즉, 기본 상태일 때) 이 항목을 선택합니다.
+이 item은 android:state 속성이 없기 때문에, 항상 마지막에 위치하여 기본값(default) 역할을 합니다.
+
+이 selector 드로어블은 다음과 같이 동작합니다:
+기본 상태: stop_normal 이미지가 표시됩니다.
+누르거나 포커스 시: stop_clicked 이미지가 표시되어 사용자가 상호작용하고 있음을 알려줍니다.
+이를 통해 개발자는 버튼의 상태별 이미지를 따로 관리하여 사용자 경험(UX)을 향상시킬 수 있습니다.
+-->
