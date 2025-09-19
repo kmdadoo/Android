@@ -1,0 +1,27 @@
+<!--
+     안드로이드 앱에서 사용할 애니메이션을 정의하는 XML 파일이에요.
+     이 코드는 <translate> 태그를 사용하여 뷰(View)를 이동시키는 애니메이션을 만듭니다.
+-->
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+       android:interpolator="@android:anim/accelerate_interpolator"
+       android:fromXDelta="0" android:toXDelta="0"
+       android:duration="2000" />
+<!--
+    <translate> 태그: 뷰의 위치를 이동시키는 애니메이션을 정의해요.
+
+    android:interpolator="@android:anim/accelerate_interpolator":
+        애니메이션의 속도 변화를 설정하는 부분이에요.
+        accelerate_interpolator는 애니메이션이 점점 빠르게 진행되도록 만들어요.
+    android:fromXDelta="0": 애니메이션이 시작될 때의 X축(가로) 위치를 설정해요.
+        0은 현재 위치 그대로 시작한다는 의미예요.
+    android:toXDelta="0": 애니메이션이 끝날 때의 X축(가로) 위치를 설정해요.
+        0은 X축으로 이동하지 않는다는 의미예요.
+    android:duration="2000": 애니메이션이 재생되는 시간을 밀리초(ms) 단위로 설정해요.
+        여기서는 2초 동안 애니메이션이 진행된다는 의미예요.
+
+    이 코드는 **X축(가로)**으로는 위치 변화가 없고 2초 동안 accelerate_interpolator에
+    따라 가속되지만, fromYDelta와 toYDelta 속성이 정의되지 않았기 때문에 Y축(세로) 이동도 없어요.
+    따라서 이 애니메이션은 실제로는 아무런 시각적 이동 효과를 내지 않아요.
+    주로 이 코드는 다른 애니메이션 효과와 함께 사용되거나,
+    Y축 이동 값(fromYDelta, toYDelta)이 누락된 예시일 수 있어요.
+-->

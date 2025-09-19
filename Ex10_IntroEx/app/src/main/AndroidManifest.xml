@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--앱의 전역적인 속성을 설정하는 부분
+        android:allowBackup="true" : 앱 데이터 백업을 허용할지 설정해요.
+        android:dataExtractionRules="..."와 android:fullBackupContent="..." : 앱 데이터의 백업 규칙을 정의하는 파일들을 지정해요.
+        android:icon="@mipmap/ic_launcher" : 앱의 아이콘을 지정해요.
+        android:label="@string/app_name" : 앱의 이름을 지정해요.
+            이 이름은 홈 화면이나 앱 서랍에 표시돼요. @string/app_name은 strings.xml 파일에 정의된 문자열을 가져온다는 뜻이에요.
+        android:roundIcon="@mipmap/ic_launcher_round" : 둥근 모양의 앱 아이콘을 지정해요. 안드로이드 8.0(Oreo)부터 도입된 기능이에요.
+        android:supportsRtl="true" : 오른쪽에서 왼쪽으로 쓰는 언어(아랍어, 히브리어 등)를 지원할지 설정해요.
+        android:theme="@style/Theme.Ex10_IntroEx" : 앱 전체에 적용될 테마를 지정해요.
+    -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ex10_IntroEx">
+        <!--
+            앱을 구성하는 화면, 즉 **액티비티(Activity)**를 정의해요.
+
+            IntroActivity
+            android:name=".IntroActivity" : IntroActivity.java 파일이 이 액티비티를 구현한다는 걸 나타내요.
+            android:exported="true" : 다른 앱에서도 이 액티비티를 실행할 수 있도록 허용하는 설정이에요.
+            <intent-filter> : 이 액티비티를 어떻게 실행할 수 있는지 정의하는 부분이에요.
+            <action android:name="android.intent.action.MAIN" /> :
+                이 액티비티가 앱의 메인 진입점이라는 것을 선언해요.
+                즉, 앱을 실행했을 때 이 화면이 가장 먼저 나타나요.
+            <category android:name="android.intent.category.LAUNCHER" /> :
+                이 액티비티가 앱의 런처 아이콘을 통해 실행될 수 있도록 설정해요.
+                이 두 가지 설정 덕분에 사용자가 홈 화면에서 앱 아이콘을 탭하면 IntroActivity가 실행돼요.
+
+            MainActivity
+            android:name=".MainActivity" : MainActivity.java 파일이 이 액티비티를 구현한다는 것을 나타내요.
+            이 액티비티에는 <intent-filter>가 없기 때문에, IntroActivity 같은 다른 컴포넌트에서
+                명시적으로 호출해야만 실행될 수 있어요.
+                보통 인트로 화면이 일정 시간 후에 메인 화면으로 전환될 때 이런 방식으로 사용돼요.
+        -->
+        <activity android:name=".IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>
